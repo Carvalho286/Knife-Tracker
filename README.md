@@ -37,9 +37,9 @@ The project runs on both iOS and Android (with a Dev Client for notifications).
 
   ## 📱 Platform Support
 
-- **iOS** (Dev Client recommended)  
-- **Android**  
-- **Expo Go** (works but without notifications)  
+- **iOS** (Swift / SwiftUI — APNs fully supported)  
+- **Android** (not supported in the native Swift version)  
+- **Web / Expo Go** (no longer applicable)  
 
 ---
 
