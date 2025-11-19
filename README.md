@@ -1,6 +1,6 @@
 # Knife Tracker App
 
-**Knife Tracker App** is a mobile application built with **Expo + React Native + Expo Router** designed to track CS2 knife listings in real time.
+**Knife Tracker App** is a mobile application built with **Swift UIr** designed to track CS2 knife listings in real time.
 
 The app allows users to:
 
@@ -10,7 +10,7 @@ The app allows users to:
 - Receive notifications when new knives appear  
 - Sync with a FastAPI backend that performs scraping and background monitoring  
 
-The project runs on both iOS and Android (with a Dev Client for notifications).
+The project runs on iOS only.
 
 ---
 
