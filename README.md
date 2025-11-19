@@ -17,15 +17,15 @@ The project runs on both iOS and Android (with a Dev Client for notifications).
 ## 🚀 Tech Stack
 
 ### **Frontend (this repository)**  
-- Expo  
-- Expo Router  
-- React Native  
-- Axios  
-- Expo Notifications  
-- AsyncStorage  
-- react-native-reanimated  
-- react-native-safe-area-context  
-- @expo/vector-icons  
+- Swift (SwiftUI)  
+- APNs (Apple Push Notification Service)  
+- URLSession para networking  
+- Codable para parsing de JSON  
+- UserDefaults / Keychain para armazenamento local  
+- Gestão de filtros e categorias por dispositivo  
+- Sincronização de push tokens com o backend  
+- Async/await para operações assíncronas  
+- UI responsiva e nativa em SwiftUI  
 
 ### **Backend (separate repository)**  
 - FastAPI  
