@@ -16,7 +16,7 @@ The project runs on both iOS and Android (with a Dev Client for notifications).
 
 ## 🚀 Tech Stack
 
-### **Frontend (this repository)**  
+### **Frontend**  
 - Swift (SwiftUI)  
 - APNs (Apple Push Notification Service)  
 - URLSession para networking  
@@ -27,7 +27,7 @@ The project runs on both iOS and Android (with a Dev Client for notifications).
 - Async/await para operações assíncronas  
 - UI responsiva e nativa em SwiftUI  
 
-### **Backend (separate repository)**  
+### **Backend**  
 - FastAPI  
 - MongoDB  
 - Background worker (Python)  
