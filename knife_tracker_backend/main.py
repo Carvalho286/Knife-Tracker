@@ -1,15 +1,23 @@
 from fastapi import FastAPI, HTTPException
 from knife_tracker_backend.models import RegisterDevice, UpdateFilters, UpdateNotifications
 from knife_tracker_backend.database import tokens_collection, assets_collection, create_indexes
-from knife_tracker_backend.pirateswap import fetch_items
+from knife_tracker_backend.pirateswap import fetch_items_PirateSwap
+from knife_tracker_backend.tradeit import fetch_items_TradeIt
 from contextlib import asynccontextmanager
 from fastapi import Query
 
-KNIFE_TYPES = [
+KNIFE_TYPES_PirateSwap = [
     "m9Bayonet","gut","bayonet","bowie","falchion","butterfly","flip",
     "huntsman","karambit","shadowDaggers","navaja","stiletto","talon",
     "classic","ursus","skeleton","nomad","paracord","survival"
 ]
+
+KNIFE_TYPES_TradeIt = [
+    "M9","gut","bayonet","bowie","falchion","butterfly","flip",
+    "huntsman","karambit","shadow","navaja","stiletto","talon",
+    "classic","ursus","skeleton","nomad","paracord","survival"
+]
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -68,9 +76,13 @@ async def update_filters(data: UpdateFilters, deviceId: str):
 # ================================
 # List knife types
 # ================================
-@app.get("/knife-types")
-async def get_knife_types():
-    return {"types": KNIFE_TYPES}
+@app.get("/knife-types-pirateswap")
+async def get_knife_types_pirate_swap():
+    return {"types": KNIFE_TYPES_PirateSwap}
+
+@app.get("/knife-types-tradeit")
+async def get_knife_types_tradeit():
+    return {"types": KNIFE_TYPES_TradeIt}
 
 
 # ================================
@@ -86,8 +98,8 @@ async def get_items(subcategory: list[str] = Query(...)):
 # Get items from tradeIt
 # ================================
 @app.get("/items-tradeit")
-async def get_items(subcategory: list[str] = Query(...)):
-    items = await fetch_items_TradeIt(subcategory)
+async def get_items(subcategory: str = Query(...)):
+    items = await fetch_items_TradeIt([subcategory])
     return {"items": items}
 
 # ================================
