@@ -76,9 +76,18 @@ async def get_knife_types():
 # ================================
 # Get items from pirateSwap
 # ================================
-@app.get("/items")
+@app.get("/items-pirateswap")
 async def get_items(subcategory: list[str] = Query(...)):
-    items = await fetch_items(subcategory)
+    items = await fetch_items_PirateSwap(subcategory)
+    return {"items": items}
+
+
+# ================================
+# Get items from tradeIt
+# ================================
+@app.get("/items-tradeit")
+async def get_items(subcategory: list[str] = Query(...)):
+    items = await fetch_items_TradeIt(subcategory)
     return {"items": items}
 
 # ================================

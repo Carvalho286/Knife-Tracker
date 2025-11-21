@@ -19,7 +19,7 @@ import httpx
 
 BASE_URL = "https://web.pirateswap.com/inventory/ExchangerInventory"
 
-async def fetch_items_PirateSwap(subcategories: list[str]):
+async def fetch_items_TradeIt(subcategories: list[str]):
     items = []
 
     async with httpx.AsyncClient() as client:
